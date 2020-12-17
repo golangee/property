@@ -19,6 +19,14 @@ type String struct {
 	Property
 }
 
+// NewString allocates a new property and sets a default value.
+func NewString(value string) *String {
+	b := &String{}
+	b.Set(value)
+
+	return b
+}
+
 // Set updates the value and notifies each registered observer.
 func (s *String) Set(v string) *String {
 	s.Property.Set(v)
